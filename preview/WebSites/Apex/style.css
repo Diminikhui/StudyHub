@@ -1,0 +1,97 @@
+/* Общие стили для страницы */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body, html {
+    height: 100%;
+    overflow-x: hidden;
+    color: white;
+    background-color: #111;
+}
+
+/* Параллакс-эффект */
+.parallax {
+    background-image: url('photo.jpeg');
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    
+}
+
+/* Основной заголовок и подзаголовок */
+.main-title {
+    font-size: 8rem;
+    color: white;
+    text-shadow: 0 0 15px rgba(221, 36, 36, 0.7);
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 2rem;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(221, 36, 36, 0.5);
+  
+}
+
+
+.slaidy {
+    height: 100vh;
+    
+    align-items: center;
+    justify-content: center;
+    background-color: #222;
+    width: 100vw;
+} 
+.carousel-inner{
+    position: relative;
+    width: 80vw;
+    border-radius: 20px;
+    margin: 0 auto;
+    top: 70px;
+}
+
+.Personadzi{
+    position: relative;
+    margin: auto 0;
+    width: 20vw;
+    font-size: 250%;
+    left: 42%;
+    top: 35px;
+    text-shadow: 0 0 10px rgba(221, 36, 36, 0.5); 
+}
+h5{
+  text-shadow: 0 0 10px rgba(221, 36, 36, 0.5); 
+  color: #ffffff;
+  font-size: 60px;
+}
+p{
+    text-shadow: 0 0 10px rgba(221, 36, 36, 0.5); 
+    color: #ffffff;
+    font-size: 20px;
+    margin-top: -20px;
+}
+.carousel-control-next{
+width: 150%;
+
+}
+.carousel-control-prev{
+width: 150px;
+
+overflow: 100%;
+}
+
+.carousel-indicators{
+margin-bottom: -60px;
+
+}
