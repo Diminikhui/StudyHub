@@ -1,0 +1,98 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+   body {
+	height: 100vh;
+	background-color: #009dff ;
+	display: flex;
+	align-items: flex-end;
+}
+
+.road {
+	width: 100%;
+	height: 100px;
+	background: #333;
+	position: relative;
+}
+
+.car {
+	width: 200px;
+	height: 80px;
+	background: red;
+	border-radius: 10px;
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	animation: moveCar 4s forwards;
+}
+
+.wheel {
+	width: 40px;
+	height: 40px;
+	background: black;
+	border-radius: 50%;
+	position: absolute;
+	bottom: -20px;
+}
+
+.wheel.front {
+	left: 20px;
+}
+
+.wheel.back {
+	right: 20px;
+}
+
+.sun {
+	width: 80px;
+	height: 80px;
+	background: yellow;
+	border-radius: 50%;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
+.tree {
+	width: 60px;
+	height: 200px;
+	background: rgb(113, 60, 5);
+	border-radius: 10px;
+	position: absolute;
+	top: 70%;
+	right: 0;
+	animation: moveTree 5s forwards;
+}
+
+.krona{
+	width: 200px;
+	height: 200px;
+	background: rgb(11, 255, 0);
+	border-radius: 50%;
+	position: absolute;
+	bottom: 60%;
+	right: -75px;
+	
+}
+
+@keyframes moveCar {
+	from {
+		left: 0;
+	}
+	to {
+		left: calc(100% - 250px);
+	}
+}
+
+
+@keyframes moveTree {
+	from {
+		right:  0;
+	}
+	to {
+		right: calc(100% - 250px);
+	}
+}
