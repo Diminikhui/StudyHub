@@ -1,0 +1,797 @@
+
+ body {
+	
+	display: grid;
+	align-items: flex-end;
+	background: white;
+	color: color(display-p3 0.561 0.561 0.561);
+} 
+/* верх 1 сектор  */
+.r{
+	position: absolute;
+	  top: 0;
+	  right: 5%; 
+	  font-size: 20px; 
+	  top: 20px;
+	  
+}
+.l{
+	position: absolute;
+	  top: 0;
+	  left: 5%; 
+	  font-size: 34px; 
+	  color: color(display-p3 0.494 0.494 0.494);
+}
+.logo{
+border: thin solid color(display-p3 0.373 0.757 0.882);
+border-width: 3px;
+height: 20px;
+width: 20px;
+}
+
+.Search{
+	border-radius: 0;
+	
+}
+
+.GO{
+	background: color(display-p3 0.373 0.757 0.882);
+	color: white;
+	border-radius: 0;
+	
+}
+
+
+
+.bar{
+	display: grid;
+	  grid-template-columns: repeat(8, 1fr);
+	  margin-top: 5%;
+	  margin-left: auto;
+	  margin-right: auto;
+	  
+}
+.bar-block{
+	background: color(display-p3 0.953 0.953 0.953);
+	width: 150px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.home{
+	color: white;
+	background-color: color(display-p3 0.376 0.761 0.886);
+}
+
+/* конец верх 1 сектор  */
+
+/*  2 сектор  */
+
+.max{
+	height: 300px;
+	background-image: url('img/young-business-engineer-with-tablet.jpg');
+	  background-size: cover;
+	  background-position: center;
+	width: 80%;
+	margin-top: 5%;
+	margin-left: auto;
+	  margin-right: auto;	
+}
+.T{
+	margin-top: 5%;
+	margin-left: 5%;
+}
+
+
+
+.numbers{
+	display: grid;
+	  grid-template-columns: repeat(4, 1fr);
+	background: color(display-p3 0.953 0.953 0.953);
+	  margin-left: auto;
+	  margin-right: auto;
+	  width: 80%;
+	  height: 200%;
+}
+
+.nomer{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+}
+
+
+
+
+.num{
+	width: 30px;
+	height: 25px;
+	background: color(display-p3 0.561 0.561 0.561);
+	color: white;
+	text-align: center;
+	margin-right: 5%; 
+}
+
+.num1{
+	width: 30px;
+	height: 25px;
+	background-color: color(display-p3 0.376 0.761 0.886);
+	color: white;
+	text-align: center;
+	margin-right: 5%; 
+}
+
+.nomer1{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+	color: color(display-p3 0.376 0.761 0.886);
+}
+
+
+
+/* конец 2 сектор  */
+
+
+/*  3 сектор  */
+
+.double-nameing{
+	
+	display: grid;
+	  grid-template-columns: repeat(2, 1fr);
+	background: white;
+	  margin-left: auto;
+	  margin-right: auto;
+	 
+	
+	  width: 80%;
+	  height: 20%;
+}
+
+.nameing{
+	display: grid;
+	  grid-template-columns: repeat(3, 1fr);
+	background: white;
+	
+	  
+	  
+	
+]
+	  
+}
+.cube{
+	background: color(display-p3 0.373 0.757 0.882);
+	height: 15px;
+	width: 15px;
+	
+	margin-right: 0;
+	margin-left: auto;
+	  margin-right: 5px;
+	  margin-top: auto;
+	  margin-bottom: auto;
+	
+	
+	
+}
+
+
+.name{
+	display: flex;
+	
+	  
+		width: 197px;
+		font-size: 14px;
+}
+
+.line{
+	display: flex;
+	
+	margin-left: 10px;
+	
+	 
+}
+
+
+
+
+
+
+.PhotoText{
+	
+	display: grid;
+	  grid-template-columns: repeat(4, 1fr);
+	background: white;
+	  margin-left: auto;
+	  margin-right: auto;
+	margin-top: 22px; 
+	  width: 80%;
+	  height: 200px;
+	   
+	  
+}
+
+.Photo{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	font-size: 18px;
+	width: 150px;
+	height:  150px;
+	margin-left: 5%;
+	  margin-right: auto;
+	  margin-top: auto;
+	  margin-bottom: auto;
+	
+}
+
+.N{
+	background-image: url('img/3d-rendering-hydraulic-elements.jpg');
+	  background-size: cover;
+	  background-position: center;
+}
+.NN{
+	background-image: url('img/3d-rendering-hydraulic-elements.jpg');
+	  background-size: cover;
+	  background-position: center;
+}
+
+.Text{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 12px;
+	width: 400px;
+	height: 200px;
+	margin-left: auto;
+	  margin-right: auto;
+	  margin-top: auto;
+	  margin-bottom: auto;
+	
+	
+}
+/* конец 3 сектор */
+
+
+
+/* 4 сектор */
+.triple-nameing{
+	display: grid;
+	  grid-template-columns: repeat(3, 1fr);
+	background: white;
+	  margin-left: auto;
+	  margin-right: auto;
+	
+	  width: 80%;
+	  height: 20%;
+}
+
+.nameing1{
+	display: grid;
+	  grid-template-columns: repeat(3, 1fr);
+	background: white;
+]
+	  
+}
+.cube{
+	background: color(display-p3 0.373 0.757 0.882);
+	height: 15px;
+	width: 15px;
+	text-align: center;
+	margin-left: 0;
+	  margin-right: 5px;
+	  margin-top: auto;
+	  margin-bottom: auto;
+	
+	
+	
+}
+
+
+.name1{
+	display: flex;
+	
+		width: 150px;
+		font-size: 14px;
+		
+}
+.name1-1{
+	display: flex;
+	
+		width: 90px;
+		font-size: 14px;
+		
+}
+.name1-2{
+	display: flex;
+	
+		width: 110px;
+		font-size: 14px;
+		
+}
+
+.line1{
+	display: flex;
+	
+	margin-left: 10px;
+	
+	 
+}
+
+
+
+
+
+.PhotoText1{
+	
+	display: grid;
+	  grid-template-columns: repeat(3, 1fr);
+	background: white;
+	  margin-left: auto;
+	  margin-right: auto;
+	margin-top: 22px; 
+	  width: 80%;
+	  height: 200px;
+	   
+	  
+}
+
+
+.Text1{
+	display: flex;
+	/* align-items: center; */
+	justify-content: center;
+	font-size: 14px;
+	width: 400px;
+	height: 200px;
+	margin-left: auto;
+	  margin-right: 10%;
+	  margin-top: auto;
+	  margin-bottom: auto;
+}
+
+
+.SomePhotoText{
+	
+	display: grid;
+	  grid-template-columns: repeat(2, 1fr);
+	background: white;
+	  margin-left: auto;
+	  margin-right: 10%;
+	margin-top: auto; 
+	  width: 90%;
+	  height: 200px;
+	   
+	
+}
+
+
+.Photo2{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: url('img/close-up-air-fryer.jpg');
+	  background-size: cover;
+	  background-position: center;
+	font-size: 18px;
+	width: 50px;
+	height: 50px;
+	margin-left: 5%;
+	  margin-right: auto;
+	  margin-top: auto;
+	  margin-bottom: auto;
+	
+}
+
+
+
+.Text2{
+	display: flex;
+	flex-direction: column ;
+	align-items: left;
+	justify-content: center;
+	font-size: 12px;
+	width: 300px;
+	height: 60px;
+	margin-left: 3%;
+	  margin-right: auto;
+	 
+	  margin-bottom: auto;
+}
+
+
+.BoldText{
+	font-weight: bold;
+	margin-bottom: 0;
+	
+	
+}
+
+/* конец 4 сектор */
+
+/* 5 сектор */
+.uno-nameing{
+	display: grid;
+	  grid-template-columns: repeat(2, 1fr);
+	background: white;
+	  margin-left: auto;
+	  margin-right: auto;
+	
+	  width: 80%;
+	  height: 20%;
+}
+
+.cube1{
+	background: color(display-p3 0.373 0.757 0.882);
+	height: 15px;
+	width: 15px;
+	text-align: center;
+	margin-left: 0;
+	  margin-right: 5px;
+	  margin-top: auto;
+	  margin-bottom: auto;
+}
+
+.name2{
+	display: flex;
+
+	justify-content: left;
+		width: 120px;
+		font-size: 14px;
+		
+	
+}
+
+.line2{
+	display: flex;
+	justify-content: left;
+	margin-left: 0;
+	
+	 
+}
+/* конец 5 сектор */
+
+
+
+.clients{
+	
+	display: grid;
+	  grid-template-columns: repeat(7, 1fr);
+	background: white;
+	  margin-left: auto;
+	  margin-right: auto;
+	margin-top: 22px; 
+	  width: 80%;
+	  height: 200px;
+	  
+	
+}
+
+
+.client{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	font-size: 18px;
+	width: 150px;
+	height: 150px;
+}
+.A{
+	background-image: url('img/6.svg');
+	background-size: cover;
+	background-position: center;
+}
+.B{
+	background-image: url('img/5.svg');
+	background-size: cover;
+	background-position: center;
+}
+.C{
+	background-image: url('img/7.svg');
+	background-size: cover;
+	background-position: center;
+	width: 250px;
+}
+.D{
+	background-image: url('img/1.svg');
+	background-size: cover;
+	background-position: center;
+}
+.E{
+	background-image: url('img/2.svg');
+	background-size: cover;
+	background-position: center;
+}
+.F{
+	background-image: url('img/3.svg');
+	background-size: cover;
+	background-position: center;
+}
+.G{
+	background-image: url('img/4.svg');
+	background-size: cover;
+	background-position: center;
+}
+
+/* футтеп 6 сектор */
+footer{
+	background: color(display-p3 0.494 0.494 0.494);
+	height: 200px;
+	color: white;
+	font-size: 10px; 
+}
+.FooterNameing{
+	display: grid;
+	  grid-template-columns: repeat(4, 1fr);
+	
+	  margin-left: auto;
+	  margin-right: auto;
+	  width: 80%;
+	  height: 20%;
+}
+.FooterName1{
+	display: flex;
+	flex-direction: column ;
+	align-items: left;
+	justify-content: center;
+	font-size: 12px;
+	width: 350px;
+	height: 60px;
+	margin-left: 0;
+	  margin-right: auto;
+	  margin-bottom: auto;
+}
+
+.FooterName2{
+	display: flex;
+	flex-direction: column ;
+	align-items: left;
+	justify-content: center;
+	font-size: 12px;
+	width: 200px;
+	height: 60px;
+	margin-left: 0;
+	  margin-right: auto;
+	  margin-bottom: auto;
+}
+
+.FooterName3{
+	display: flex;
+	flex-direction: column ;
+	align-items: left;
+	justify-content: center;
+	font-size: 12px;
+	width: 200px;
+	height: 60px;
+	margin-left: 0;
+	  margin-right: auto;
+	  margin-bottom: auto;
+}
+
+.FooterName4{
+	display: flex;
+	flex-direction: column ;
+	align-items: left;
+	justify-content: center;
+	font-size: 12px;
+	width: 300px;
+	height: 60px;
+	margin-left: 0;
+	  margin-right: auto;
+	  margin-bottom: auto;
+}
+
+.FooterLine{
+	display: flex;
+	justify-content: left;
+	width: 120px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.FooterText{
+	display: grid;
+	  grid-template-columns: repeat(4, 1fr);
+
+	  margin-left: auto;
+	  margin-right: auto;
+	margin-top: 22px; 
+	  width: 80%;
+	  height: 150px;
+	 
+	  
+}
+
+.FText{
+	display: flex;
+	/* align-items: center; */
+	justify-content: center;
+	font-size: 14px;
+	width: 300px;
+	height: 150px;
+	margin-left: 0;
+	  margin-right: 0;
+	  margin-top: auto;
+	  margin-bottom: auto;
+}
+
+.map{
+	display: grid;
+	  grid-template-columns: repeat(2, 1fr);
+
+	  margin-left: 20%;
+	  margin-right: 0;
+	margin-top: 0; 
+	  width: 200px;
+	  height: 100px;
+	  gap: 1px;
+	
+}
+
+.MapText{
+	display: flex;
+	/* align-items: center; */
+	/* justify-content: center; */
+	font-size: 14px;
+	width: 100px;
+	height: 20px;
+	margin-left: auto;
+	  margin-right: 10%;
+	  margin-top: auto;
+	  margin-bottom: auto;
+}
+
+
+.SIcon{
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	  margin-left: 25%;
+	  margin-right: 0;
+	margin-top: 0; 
+	  width: 200px;
+	  height: 100px;
+	  grid-row: 10px;
+	   
+}
+
+	.S3Icon{
+	display: grid;
+	  grid-template-columns: repeat(3, 1fr);
+	
+	  margin-left: 0;
+	  margin-right: 10%;
+	margin-top: 0; 
+	  width: 200px;
+	  height: 50px;
+	   
+}
+
+.Icon3{
+	display: flex;
+	/* align-items: center; */
+	justify-content: center;
+	font-size: 14px;
+	width: 45px;
+	height: 45px;
+	margin-left: auto;
+	  margin-right: 10%;
+	  margin-top: auto;
+	  margin-bottom: auto;
+}
+.i{
+	background-image: url('img/10.svg');
+	background-size: cover;
+	background-position: center;
+}
+.ii{
+	background-image: url('img/11.svg');
+	background-size: cover;
+	background-position: center;
+}
+.iii{
+	background-image: url('img/13.svg');
+	background-size: cover;
+	background-position: center;
+}
+
+	.S5Icon{
+	display: grid;
+		  grid-template-columns: repeat(5, 1fr);
+		  margin-left: 0;
+		  margin-right: 10%;
+		margin-top: 0; 
+		  width: 200px;
+		  height: 50px;
+		   
+	}
+
+
+.Icon5{
+	display: flex;
+	/* align-items: center; */
+	justify-content: center;
+	font-size: 14px;
+	width: 20px;
+	height: 20px;
+	margin-left: auto;
+	  margin-right: 10%;
+	  margin-top: auto;
+	  margin-bottom: auto;
+}
+
+.v{
+	background-image: url('img/14.svg');
+	background-size: cover;
+	background-position: center;
+}
+.vv{
+	background-image: url('img/15.svg');
+	background-size: cover;
+	background-position: center;
+}
+.vvv{
+	background-image: url('img/16.svg');
+	background-size: cover;
+	background-position: center;
+}
+.vvvv{
+	background-image: url('img/17.svg');
+	background-size: cover;
+	background-position: center;
+}
+.vvvvv{
+	background-image: url('img/18.svg');
+	background-size: cover;
+	background-position: center;
+}
+
+
+
+.logo1{
+	border: thin solid color(display-p3 1 1 1);
+	border-width: 3px;
+	height: 20px;
+	width: 20px;
+	left: 0;
+	
+
+}
+
+.Logo2{
+	display: flex;
+	flex-direction: column ;
+	align-items: end;
+	justify-content: right;
+	font-size: 40px;
+	width: 400px;
+	height: 150px;
+	margin-left: auto;
+	  margin-right: auto;
+	  margin-top: 0;
+	  margin-bottom: auto;
+}
+
+.LogoText{
+	font-size: 14px;
+}
+/* конец футтур 6 сектор */
