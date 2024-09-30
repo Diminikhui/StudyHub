@@ -217,7 +217,7 @@ width: 20px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	
+	background: color(display-p3 0.494 0.494 0.494);
 	font-size: 18px;
 	width: 150px;
 	height:  150px;
@@ -241,7 +241,8 @@ width: 20px;
 
 .Text{
 	display: flex;
-	align-items: center;
+	flex-direction: column ;
+	/* align-items: center;*/
 	justify-content: center;
 	font-size: 12px;
 	width: 400px;
@@ -344,6 +345,7 @@ width: 20px;
 	display: flex;
 	/* align-items: center; */
 	justify-content: center;
+	flex-direction: column ;
 	font-size: 14px;
 	width: 400px;
 	height: 200px;
@@ -353,6 +355,17 @@ width: 20px;
 	  margin-bottom: auto;
 }
 
+.RM{
+	margin-top: 10px;
+	font-weight: 700;
+	text-decoration: underline;
+}
+
+.CEO{
+	margin-top: 10px;
+	font-weight: 700;
+	
+}
 
 .SomePhotoText{
 	
