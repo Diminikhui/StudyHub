@@ -489,22 +489,11 @@ align-items: center;
 	box-sizing: border-box;
 	padding: 20px;
 }
-
-.TItogPrice{
-	display: flex;
-	width: 130px;
-	height: 58px;
-	background-color: rgba(191, 191, 191, 0);
-	border-radius: 10px;
-	align-items: center;
-	justify-content: center;
-	font-weight: bold;
-}
 .Itog2{
 	display: flex;
 	width: 410px;
 	height: 58px;
-	background-color: rgba(191, 191, 191, 0);
+background-color: rgba(191, 191, 191, 0.756);
 	border-radius: 10px;
 	align-items: center;
 	justify-content: flex-start;
@@ -521,6 +510,16 @@ align-items: center;
 	align-items: center;
 	justify-content: center;
 
+}
+.TItogPrice{
+	display: flex;
+	width: 130px;
+	height: 58px;
+	background-color: rgba(191, 191, 191, 0.756);
+	border-radius: 10px;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
 }
 .PriceWork2{
 	display: grid;
@@ -761,7 +760,7 @@ body, html {
 	display: grid;
 	  grid-template-columns: repeat(1, 1fr);
 	background-image: url('/img/background/background3.jpg');
-	height: 100vh;
+	height: 60vh;
 	background-attachment: fixed;
 	background-position: center; 
 	background-repeat: no-repeat;
@@ -1073,9 +1072,9 @@ margin-left: -300px;
 
 
 .gerb{
-	height: 140px;
-	width: 100px;
-	position: relative;
+	height: 70px;
+	width: 50px;
+	position: flex;
 	left: -440px;
 	top: 180px;
 }
@@ -1160,7 +1159,7 @@ margin-left: -300px;
 .TablePrice1{
 	display: flex;
 	position: relative;
-	left: -100px;
+	left: -40px;
 	width: 70px;
 	height: 58px;
 	background-color: rgba(191, 191, 191, 0.756);
@@ -1234,29 +1233,16 @@ margin-left: -300px;
 	left: -40px;
 	width: 70px;
 	height: 58px;
-	background-color: rgba(191, 191, 191, 0);
+	background-color: rgba(191, 191, 191, 0.756);
 	border-radius: 10px;
 	align-items: center;
 	justify-content: center;
 	font-weight: bold;
 }
-.Itog2{
-	display: flex;
-	position: relative;
-	left: -140px;
-	width: 160px;
-	height: 58px;
-	background-color: rgba(191, 191, 191, 0);
-	border-radius: 10px;
-	align-items: center;
-	justify-content: center;
-	font-size:15px ;
-	opacity: 0%;
-}
 .TItogPrice2{
 	display: flex;
 	position: relative;
-	left: -190px;
+	left: -140px;
 	width: 160px;
 	height: 58px;
 	background-color: rgba(191, 191, 191, 0.756);
@@ -1450,7 +1436,7 @@ margin-left: -300px;
 	border-radius: 20px;
 	margin: 0 auto;
 	top: 70px;
-	left: -50px;
+	left: -45px;
 }
 .carousel-control-next{
 width: 150%;
