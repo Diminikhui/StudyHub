@@ -1,0 +1,1473 @@
+/* Общие стили для страницы */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Arial', sans-serif;
+}
+
+body, html {
+	height: 100%;
+	overflow-x: hidden;
+	color: white;
+	background-color: #111;
+}
+
+/* Параллакс-эффект */
+.parallax {
+	display: grid;
+	  grid-template-columns: repeat(2, 1fr);
+	background-image: url('/img/main.jpg');
+	height: 100vh;
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+	align-items: center;
+	justify-content: center;
+
+}
+.parallax1 {
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	background-image: url('/img/main.jpg');
+	height: 100vh;
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+	align-items: center;
+	justify-content: center;
+}
+.parallax2 {
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	background-image: url('/img/main.jpg');
+	height: 100vh;
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+	align-items: end;
+
+	
+}
+
+.parallax4 {
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	background-image: url('/img/background/background3.jpg');
+	height: 100vh;
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+	align-items: flex-end;
+
+}
+.parallax5 {
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	background-image: url('/img/background/background4.jpg');
+height: 100vh;
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+	align-items: flex-end;
+
+}
+.parallax6 {
+	display: grid;
+	  grid-template-columns: repeat(2, 1fr);
+	background-image: url('/img/main.jpg');
+	height: 150vh;
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+justify-content: start;
+
+
+}
+.parallax7 {
+	display: grid;
+	  grid-template-columns: repeat(2, 1fr);
+	background-image: url('/img/background/обои8.2.jpg');
+	height: 100vh;
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+
+
+}
+
+.parallax8 {
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	background-image: url('/img/main.jpg');
+	height: 100vh;
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.parallax9 {
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	background-image: url('/img/main.jpg');
+	height: 100vh;
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+	gap: 20px;
+	column-gap: 20px;
+}
+
+.parallax10 {
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	background-image: url('/img/main.jpg');
+	height: 100vh;
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+	flex-direction: column ;
+}
+.parallax11 {
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	background-image: url('/img/main.jpg');
+	height: 100vh;
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+	flex-direction: column ;
+}
+
+.parallax12 {
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	background-image: url('/img/background/14слайд.png');
+	height: 100vh;
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+	flex-direction: column ;
+	align-items: center;
+	justify-content: center;
+	align-items: end;
+	justify-content: end;
+}
+
+.parallax13 {
+
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	background-image: url('/img/main.jpg');
+	height: 120vh;
+	background-attachment: fixed;
+	background-position: center; 
+	
+	background-size: cover;
+	
+
+}
+.parallax14 {
+
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	background-image: url('/img/main.jpg');
+	height: 140vh;
+	background-attachment: fixed;
+	background-position: center; 
+	
+	background-size: cover;
+	
+
+}
+
+.RoudMap{
+	height: 1000px;
+	width: 2000px;
+	margin-left: 0;
+	top: 0;
+}
+
+.RoudMap1{
+	width: 100%;
+	min-width: 10%;
+	min-height: 10%;
+	margin-left: 0;
+	top: 0;
+}
+
+.lunoxod{
+	position: relative;
+	display: flex;
+	width: 100%;
+
+	min-width: 10%;
+/* margin-left: 10%;  */
+z-index: 1;
+/* margin-bottom: 10%; */
+}
+
+.textlunoxod{
+	display: flex;
+	flex-direction: column ;
+	font-size: 80px;
+	width: auto;
+	  height: 20%;
+	  font-weight: bold;
+	  top: 0;
+margin-left: 2%;
+z-index: 2;
+}
+
+.textlunoxod1{
+font-size: 16px;
+}
+.textlunoxod2{
+font-size: 16px;
+}
+.textlunoxod3{
+font-size: 18px;
+font-weight: bold;
+color: rgb(197, 195, 195)
+}
+
+.text1{
+	font-size: 18px;
+	margin-top: 10%;
+	text-align: left;
+}
+.text2{
+	display: flex;
+	flex-direction: column ;
+	font-size: 80px;
+	width: auto;
+	  height: 20%;
+	  font-weight: bold;
+	  
+}
+.text3{
+	display: flex;
+	font-size: 25px;
+	width: auto;
+	  height: 20%;
+	  margin-top: 0;
+}
+.text4{
+	display: flex;
+	flex-direction: column ;
+	font-size: 80px;
+	width: auto;
+	  height: 20%;
+	  font-weight: bold;
+	  top: 0;
+margin-left: 2%;
+margin-bottom: 5%
+	  
+}
+
+.luna1{
+	display: flex;
+	margin-right: 10%;
+	min-width: 10%;
+	min-height: 10%;
+	height: 120%;
+	width: 120%;
+}
+.hero-section{
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	  width: 100%;
+	  height: 100%;
+	  margin-left: 10%;
+}
+
+
+
+
+
+
+.polluna{
+	display: flex;
+	height: 75%;
+	width: 400px;
+	min-width: 100px;
+	margin-left: 0;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.PeopleGerb{
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	  flex-direction: column ;
+	align-items: center;
+	justify-content: center;
+	margin-right: 10%;
+	
+}
+
+.PeopleName{
+	display: grid;
+	  grid-template-columns: repeat(2, 1fr);
+	align-items: center;
+	justify-content: center;
+gap: 10px;
+}
+
+.TextGerb{
+	display: grid;
+	  grid-template-columns: repeat(2, 1fr);
+	  flex-direction: column ;
+	  height: 100%;
+	  width: 100%;
+	gap: 10px;
+	column-gap: 10px;
+	align-items: start;
+	margin-top: 10%;
+
+}
+
+.people{
+	display: grid;
+	  grid-template-columns: repeat(2, 1fr);
+
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	column-gap: 10px;
+	margin-rigt: 10%;
+	
+}
+.PeoplePhoto{
+	height: 120px;
+	width: 120px;
+}
+
+.PeopleText{
+
+	width: 250px;
+}
+
+
+.gerb{
+	height: 140px;
+	width: 100px;
+}
+.textG{
+	display: flex;
+	font-size: 30px;
+	  font-weight: bold;
+	  flex-direction: column ;
+	  width: 600px;
+}
+.textG2{
+	position: relative;
+	display: flex;
+	font-size: 23%;
+	margin-top: 0;
+	top:5px;
+}
+
+.Sculptura{
+	display: flex;
+	position: relative;
+	width: 80%;
+	min-width:10% ;
+	top: 10%;
+	left: 100px;
+}
+
+.text5{
+	display: flex;
+	position: relative;
+		flex-direction: column ;
+		font-size: 80px;
+		width: 100%;
+		  height: 20%;
+		  font-weight: bold;
+		  top: 10%;
+	margin-left: 10%;
+
+}
+
+.text6{
+	display: flex;
+	flex-direction: column ;
+	font-size: 80px;
+	width: auto;
+	  height: 20%;
+	  font-weight: bold;
+	  top: 0;
+margin-left: 2%;
+margin-bottom: 5%
+	  
+}
+
+.textP2{
+		display: flex;
+		font-size: 16px;
+		margin-top: 5%;
+		margin-left: 5%;
+		margin-right: 5%;
+}
+
+.PriceWork1{
+	display: grid;
+	  grid-template-columns: repeat(4, 1fr);
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	column-gap: 5px;
+	margin-rigt: 20%;
+	margin-left: 10%;
+	width: 70%;
+}
+
+.TablePrice1{
+	display: flex;
+	width: 130px;
+	height: 58px;
+	background-color: rgba(191, 191, 191, 0.756);
+	border-radius: 10px;
+	align-items: center;
+	justify-content: center;
+
+}
+.TablePrice{
+	display: flex;
+	width: 130px;
+	height: 58px;
+	background-color: rgba(191, 191, 191, 0.756);
+	border-radius: 10px;
+	align-items: center;
+	justify-content: center;
+}
+
+.TableName{
+	display: flex;
+	width: 410px;
+	height: 58px;
+background-color: rgba(191, 191, 191, 0.756);
+	border-radius: 10px;
+	align-items: center;
+	justify-content: flex-start;
+	box-sizing: border-box;
+	padding: 20px;
+}
+.TableNom{
+	display: flex;
+	width: 410px;
+	height: 58px;
+background-color: rgba(191, 191, 191, 0.756);
+	border-radius: 10px;
+	align-items: center;
+	justify-content: flex-start;
+	box-sizing: border-box;
+	padding: 20px;
+
+}
+.Itog{
+	display: flex;
+	width: 410px;
+	height: 58px;
+	background-color: rgba(191, 191, 191, 0.756);
+	border-radius: 10px;
+align-items: center;
+	justify-content: flex-start;
+	box-sizing: border-box;
+	padding: 20px;
+}
+
+.TItogPrice{
+	display: flex;
+	width: 130px;
+	height: 58px;
+	background-color: rgba(191, 191, 191, 0);
+	border-radius: 10px;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+}
+.Itog2{
+	display: flex;
+	width: 410px;
+	height: 58px;
+	background-color: rgba(191, 191, 191, 0);
+	border-radius: 10px;
+	align-items: center;
+	justify-content: flex-start;
+	box-sizing: border-box;
+	padding: 20px;
+
+}
+.TItogPrice2{
+	display: flex;
+	width: 130px;
+	height: 58px;
+	background-color: rgba(191, 191, 191, 0.756);
+	border-radius: 10px;
+	align-items: center;
+	justify-content: center;
+
+}
+.PriceWork2{
+	display: grid;
+	  grid-template-columns: repeat(4, 1fr);
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	column-gap: 5px;
+	margin-top: 0;
+	margin-rigt: 20%;
+	margin-left: 10%;
+	width: 75%;
+	height: 50%;
+}
+.textP21{
+	display: flex;
+	font-size: 16px;
+	margin-top: 0;
+	margin-bottom: 30%;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.text7{
+	display: flex;
+	position: relative;
+	flex-direction: column ;
+	font-size: 300%;
+	width: auto;
+	height: 20%;
+	font-weight: bold;
+	top: 0;
+	margin: 0 auto;
+	left:2%;
+	margin-top: -20px;
+
+}
+.text8{
+	display: flex;
+	font-size: 80px;
+}
+.text9{
+	display: flex;
+	font-size: 30px;
+}
+
+.finans{
+	height: 100%;
+	min-width: 10%;
+	width: 100%;
+	min-height: 10%;
+	margin-left: auto;
+	margin-right: auto;
+	top: 0;
+}
+.docx{
+	display: flex;
+	margin-left: 30%;
+	margin-top: 10%;
+	
+}
+.text10{
+	display: flex;
+	font-size: 20px;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 20px;
+}
+
+.text12{
+	display: flex;
+	font-size: 18px;
+	margin-left: 45%;
+	position: relative;
+	bottom:0;
+	left: -10px;
+	align-items: end;
+	justify-content: end;
+	text-align: end;
+	font-weight: bold;
+}
+.eee{
+	align-items: end;
+	justify-content: end;
+}
+
+
+.text13{
+	font-size: 30px;
+	display: flex;
+		flex-direction: column ;
+		
+		width: 50%;
+		  height: 20%;
+		  font-weight: bold;
+		  top: 0;
+	margin-left: 2%;
+	margin-top: 5%;
+}
+.text14{
+	font-size: 30px;
+	font-weight: bold;
+	margin-top: 5%;
+}
+
+
+.bot{
+	display: grid;
+	  grid-template-columns: repeat(3, 1fr);
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	column-gap: 5px;
+	margin-bottom: 0;
+	
+
+}
+
+.video{
+	margin-left: auto;
+	margin-right: auto;
+	align-items: center;
+	justify-content: center;
+}
+
+.logo{
+	display: flex;
+	width: 300px;
+	height: 282px;
+	margin-left: 10%;
+}
+
+.textB{
+	width: 550px;
+	font-size: 20px;
+}
+.qr{
+	display: flex;
+	position: relative;
+	width: 200px;
+	height: 200px;
+	right: 0;
+	margin-left: 25%;
+}
+
+
+
+
+
+.slaidy {
+	height: 100vh;
+	
+	align-items: center;
+	justify-content: center;
+
+} 
+.carousel-inner{
+	position: flex;
+	width: 80vw;
+	border-radius: 20px;
+	margin: 0 auto;
+	top: 70px;
+}
+.carousel-control-next{
+width: 150%;
+
+}
+.carousel-control-prev{
+width: 150px;
+
+overflow: 100%;
+}
+
+.carousel-indicators{
+margin-bottom: -60px;
+
+}
+
+
+
+@media  screen and  (max-width : 576px) {
+/* Общие стили для страницы */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Arial', sans-serif;
+}
+
+body, html {
+	height: 100%;
+	overflow-x: hidden;
+	color: white;
+	background-color: #111;
+}
+
+/* Параллакс-эффект */
+.parallax {
+	display: grid;
+	  grid-template-columns: repeat(2, 1fr);
+	background-image: url('/img/main.jpg');
+	height: 100vh;
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+	align-items: center;
+	justify-content: center;
+
+}
+.parallax1 {
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	background-image: url('/img/main.jpg');
+	height: 100vh;
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+	align-items: center;
+	justify-content: center;
+}
+.parallax2 {
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	background-image: url('/img/main.jpg');
+	height: 100vh;
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+	align-items: end;
+
+
+	
+}
+
+.parallax4 {
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	background-image: url('/img/background/background3.jpg');
+	height: 100vh;
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+	align-items: flex-end;
+
+}
+.parallax5 {
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	background-image: url('/img/background/background4.jpg');
+height: 100vh;
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+	align-items: flex-end;
+}
+.parallax6 {
+	display: grid;
+	  grid-template-columns: repeat(2, 1fr);
+	background-image: url('/img/main.jpg');
+	height: 150vh;
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+justify-content: start;
+
+
+}
+.parallax7 {
+	display: grid;
+	  grid-template-columns: repeat(2, 1fr);
+	background-image: url('/img/background/обои8.2.jpg');
+	height: 100vh;
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+
+
+}
+
+.parallax8 {
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	background-image: url('/img/main.jpg');
+	height: 100vh;
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.parallax9 {
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	background-image: url('/img/main.jpg');
+	height: 100vh;
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+	gap: 20px;
+	column-gap: 20px;
+}
+
+.parallax10 {
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	background-image: url('/img/main.jpg');
+	height: 100vh;
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+	flex-direction: column ;
+}
+.parallax11 {
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	background-image: url('/img/main.jpg');
+	height: 100vh;
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+	flex-direction: column ;
+}
+
+.parallax12 {
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	background-image: url('/img/background/14слайд.png');
+	height: 100vh;
+	background-attachment: fixed;
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: cover;
+	flex-direction: column ;
+	align-items: center;
+	justify-content: center;
+	align-items: end;
+	justify-content: end;
+}
+
+.parallax13 {
+
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	background-image: url('/img/main.jpg');
+	height: 120vh;
+	background-attachment: fixed;
+	background-position: center; 
+	
+	background-size: cover;
+	
+
+}
+.parallax14 {
+
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	background-image: url('/img/main.jpg');
+	height: 140vh;
+	background-attachment: fixed;
+	background-position: center; 
+	
+	background-size: cover;
+	
+
+}
+
+.RoudMap{
+	height: 1000px;
+	width: 2000px;
+	margin-left: 0;
+	top: 0;
+}
+
+.RoudMap1{
+	width: 100%;
+	min-width: 10%;
+	min-height: 10%;
+	margin-left: 0;
+	bottom: 400px;
+}
+
+.lunoxod{
+	position: relative;
+	display: flex;
+	width: 100%;
+
+	min-width: 10%;
+/* margin-left: 10%;  */
+z-index: 1;
+/* margin-bottom: 10%; */
+}
+
+.textlunoxod{
+	display: flex;
+	position: relative;
+	flex-direction: column ;
+	font-size: 60px;
+	width: auto;
+	height: 20%;
+	font-weight: bold;
+	top: -170px;
+	z-index: 2;
+}
+
+.textlunoxod1{
+	margin-top: 20px;
+font-size: 16px;
+}
+.textlunoxod2{
+	margin-top: -5px;
+font-size: 16px;
+}
+.textlunoxod3{
+font-size: 18px;
+font-weight: bold;
+color: rgb(197, 195, 195)
+}
+
+.text1{
+	font-size: 12px;
+	margin-top: 10%;
+	text-align: left;
+}
+.text2{
+	display: flex;
+	position: relative;
+	flex-direction: column ;
+	font-size: 50px;
+	width: auto;
+	  height: 20%;
+	  font-weight: bold;
+	  top: -50px;
+	  
+}
+.text3{
+	display: flex;
+	font-size: 15px;
+	width: auto;
+	  height: 20%;
+	  margin-top: 5px;
+}
+.text4{
+	display: flex;
+	position: relative;
+	flex-direction: column ;
+	font-size: 30px;
+	width: auto;
+	
+	  font-weight: bold;
+	  bottom: 100px;
+
+	  
+}
+
+.luna1{
+	display: flex;
+	position: relative;
+	min-width: 10%;
+
+	width: 220%;
+}
+.hero-section{
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	  width: 100%;
+	  height: 100%;
+	  margin-left: 10%;
+}
+
+
+
+
+
+
+.polluna{
+	
+	display: flex;
+	height: 500px;
+	width: 200px;
+	min-width: 100px;
+	margin-left: 0;
+	margin-top: 150px;
+	margin-bottom: auto;
+	
+}
+
+.PeopleGerb{
+	display: grid;
+	  grid-template-columns: repeat(1, 1fr);
+	  flex-direction: column ;
+	align-items: center;
+	justify-content: center;
+	margin-right: 10%;
+	
+}
+
+.PeopleName{
+	display: grid;
+	grid-template-columns: repeat(1, 5fr);
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	
+}
+
+.TextGerb{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	 flex-direction: column ;
+	height: 100%;
+	  width: 100%;
+	gap: 10px;
+	column-gap: 10px;
+	align-items: start;
+	margin-top: 10%;
+
+}
+
+.people{
+	display: grid;
+	  grid-template-columns: repeat(2, 1fr);
+
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	column-gap: 10px;
+	
+}
+.PeoplePhoto{
+	width: 60px;
+	height: 60px;
+	position: relative;
+	left: -130px;
+}
+
+.PeopleText{
+font-size: 80%;
+margin-left: -300px;
+
+}
+
+
+.gerb{
+	height: 140px;
+	width: 100px;
+	position: relative;
+	left: -440px;
+	top: 180px;
+}
+.textG{
+	display: flex;
+	position: relative;
+	font-size: 20px;
+	  font-weight: bold;
+	  flex-direction: column ;
+	  width: 400px;
+	  left: -160px;
+	  top: 0px;
+}
+.textG2{
+	position: relative;
+	display: flex;
+	font-size: 30%;
+	margin-top: 0;
+	top:10px;
+	width: 300px;
+}
+
+.Sculptura{
+	display: flex;
+	position: relative;
+	width: 200%;
+	min-width:10% ;
+	top: 570px;
+	left: -140px;
+}
+
+.text5{
+	display: flex;
+	position: relative;
+	flex-direction: column ;
+	font-size: 40px;
+	width: 100%;
+	height: 20%;
+	font-weight: bold;
+	top: 10%;
+	margin-left: 10%;
+
+}
+
+.text6{
+	display: flex;
+	position: relative;
+	flex-direction: column ;
+	font-size: 35px;
+	width: auto;
+	height: 20%;
+	font-weight: bold;
+	left: px;
+	bottom: 20px;
+
+	  
+}
+
+.textP2{
+		display: flex;
+		position: relative;
+		width: 400px;
+		left: -20px;
+		font-size: 16px;
+		margin-top: 5%;
+		margin-left: 5%;
+		margin-right: 5%;
+}
+
+.PriceWork1{
+	display: grid;
+	position: relative;
+	grid-template-columns: repeat(4, 1fr);
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	column-gap: 5px;
+	width: 50%;
+	top: -100px;
+	left: 110px;
+}
+.TablePrice1{
+	display: flex;
+	position: relative;
+	left: -100px;
+	width: 70px;
+	height: 58px;
+	background-color: rgba(191, 191, 191, 0.756);
+	border-radius: 10px;
+	align-items: center;
+	justify-content: center;
+	font-size:10px ;
+
+}
+.TableNom{
+	display: flex;
+	position: relative;
+	left: -45px;
+	font-size: 7px;
+	width: 100px;
+	min-width: 1%;
+	height: 58px;
+	background-color: rgba(191, 191, 191, 0.756);
+	border-radius: 10px;
+	align-items: center;
+	justify-content: flex-start;
+	box-sizing: border-box;
+	padding: 20px;
+	padding-left: -20px;
+
+}
+.TablePrice{
+	display: flex;
+	position: relative;
+	left:-40px ;
+	width: 90%;
+	min-width: 1%;
+	height: 58px;
+	background-color: rgba(191, 191, 191, 0.756);
+	border-radius: 10px;
+	align-items: center;
+	justify-content: center;
+	font-size:10px ;
+}
+
+.TableName{
+	display: flex;
+	position: relative;
+	left: -30px;
+	font-size: 8px;
+	width: 90%;
+	height: 58px;
+	background-color: rgba(191, 191, 191, 0.756);
+	border-radius: 10px;
+	align-items: center;
+	justify-content: flex-start;
+	box-sizing: border-box;
+	padding: 20px;
+}
+.Itog{
+	display: flex;
+	position: relative;
+	left: -30px;
+	width: 90%;
+	height: 58px;
+	background-color: rgba(191, 191, 191, 0.756);
+	border-radius: 10px;
+	align-items: center;
+	justify-content: flex-start;
+	box-sizing: border-box;
+	padding: 20px;
+}
+.TItogPrice{
+	display: flex;
+	position: relative;
+	left: -40px;
+	width: 70px;
+	height: 58px;
+	background-color: rgba(191, 191, 191, 0);
+	border-radius: 10px;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+}
+.Itog2{
+	display: flex;
+	position: relative;
+	left: -140px;
+	width: 160px;
+	height: 58px;
+	background-color: rgba(191, 191, 191, 0);
+	border-radius: 10px;
+	align-items: center;
+	justify-content: center;
+	font-size:15px ;
+	opacity: 0%;
+}
+.TItogPrice2{
+	display: flex;
+	position: relative;
+	left: -190px;
+	width: 160px;
+	height: 58px;
+	background-color: rgba(191, 191, 191, 0.756);
+	border-radius: 10px;
+	align-items: center;
+	justify-content: center;
+	font-size:15px ;
+
+}
+.PriceWork2{
+	display: grid;
+	position: relative;
+	left: 50px;
+	  grid-template-columns: repeat(4, 1fr);
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	column-gap: 5px;
+	margin-top: 0;
+	margin-right: 20%;
+	margin-left: 10%;
+	width: 75%;
+	height: 50%;
+}
+.textP21{
+	display: flex;
+	position: relative;
+	font-size: 15px;
+	width: 400px;
+	top: -50px;
+	margin-top: 0;
+	margin-bottom: 30%;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.text7{
+	display: flex;
+	position: relative;
+	flex-direction: column ;
+	font-size:130%;
+	width: 350px;
+	height: 20%;
+	font-weight: bold;
+	top: 100px;
+	margin: 0 auto;
+	left:-50px;
+	margin-top: -20px;
+
+}
+.text8{
+	display: flex;
+	font-size: 40px;
+}
+.text9{
+	display: flex;
+	font-size: 10px;
+}
+
+.finans{
+	height: 60%;
+	position: relative;
+	min-width: 10%;
+	width: 90%;
+	min-height: 10%;
+	margin-left: auto;
+	margin-right: auto;
+	top: 0;
+	left: -20px;
+}
+.docx{
+	display: flex;
+	margin-left: 30%;
+	margin-top: 10%;
+	
+}
+.text10{
+	position: relative;
+	display: flex;
+	font-size: 12px;
+	width: 350px;
+	left: -20px;
+}
+
+.text12{
+	display: flex;
+	font-size: 14px;
+	width: 200px;
+	margin-left: 45%;
+	position: relative;
+	bottom:0;
+	left: -30px;
+	align-items: end;
+	justify-content: end;
+	text-align: end;
+	font-weight: bold;
+}
+.eee{
+	align-items: end;
+	justify-content: end;
+}
+
+
+.text13{
+	font-size: 15px;
+	display: flex;
+	flex-direction: column ;
+	width: 80%;
+	height: 20%;
+	font-weight: bold;
+	top: 0;
+	margin-left: 2%;
+	margin-top: 5%;
+}
+.text14{
+	font-size: 10px;
+	font-weight: bold;
+	margin-top: 5%;
+}
+
+
+.bot{
+	display: grid;
+	  grid-template-columns: repeat(3, 1fr);
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	column-gap: 5px;
+	margin-bottom: 0;
+	
+
+}
+
+.video{
+
+	align-items: center;
+	justify-content: center;
+	width: 80%;
+	position: relative;
+	left: 20px;
+	height: 100%;
+   }
+   
+   .video iframe {
+	width: 80%;
+	height: 100%;
+	border: none;
+   }
+
+.logo{
+	display: flex;
+	position: relative;
+	width: 70px;
+	height: 70px;
+	left: 0px;
+	top: 90px;
+
+	
+}
+
+.textB{
+	position: relative;
+	left: -40px;
+	width: 200px;
+	font-size: 7px;
+	bottom: -100px;
+}
+.qr{
+	display: flex;
+	position: relative;
+	width: 70px;
+	height: 70px;
+	left: -70px;
+	bottom: -90px;
+	
+}
+
+
+
+
+
+.slaidy {
+	height: 100vh;
+	
+	align-items: center;
+	justify-content: center;
+
+} 
+.carousel-inner{
+	position: relative;
+	width: 80vw;
+	border-radius: 20px;
+	margin: 0 auto;
+	top: 70px;
+	left: -50px;
+}
+.carousel-control-next{
+width: 150%;
+
+}
+.carousel-control-prev{
+width: 150px;
+
+overflow: 100%;
+}
+
+.carousel-indicators{
+margin-bottom: -60px;
+
+}
+
+
+
+
+}
