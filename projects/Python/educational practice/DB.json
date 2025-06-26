@@ -1,0 +1,16 @@
+{
+  "_default": {
+    "1": {
+      "name": "Форма заказа",
+      "customer": "text",
+      "order_id": "text",
+      "дата_заказа": "date",
+      "contact": "phone"
+    },
+    "2": {
+      "name": "Проба",
+      "f_name1": "email",
+      "f_name2": "date"
+    }
+  }
+}
