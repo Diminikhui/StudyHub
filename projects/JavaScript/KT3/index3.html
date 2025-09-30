@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Изменение текста</title>
+</head>
+<body>
+//    ███
+//   ██
+//  ██
+//  █████
+//  ██  ██
+//  ██  ██
+//  ██  ██
+//   ████
+<h1 id="mainText">helouworld</h1>
+
+<button onclick="changeText()">next text</button>
+
+<script>
+  function changeText() {
+    document.getElementById("mainText").innerText = "sucses";
+  }
+</script>
+//  ███████
+//      ██
+//     ██
+//    ██
+//   ██
+//  ██
+//  ██
+<p id="text">text show/high</p>
+
+<button onclick="toggleText()">show/high</button>
+
+<script>
+  function toggleText() {
+    const element = document.getElementById("text");
+
+    if (element.style.display === "none") {
+      element.style.display = "block";
+    } else {
+      element.style.display = "none";
+    }
+  }
+</script>
+//   ████
+//  ██  ██
+//  ██  ██
+//   ████
+//  ██  ██
+//  ██  ██
+//  ██  ██
+//   ████
+<form onsubmit="return validateForm()">
+  <label for="username">Имя пользователя:</label><br>
+  <input type="text" id="username"><br>
+  <span id="error" style="color: red;"></span><br><br>
+  <button type="submit">Отправить</button>
+</form>
+
+<script>
+  function validateForm() {
+    const input = document.getElementById("username");
+    const error = document.getElementById("error");
+
+    if (input.value.trim() === "") {
+      error.innerText = "Поле не должно быть пустым!";
+      return false; // отменяет отправку формы
+    }
+
+    error.innerText = ""; // очищаем ошибку, если всё ок
+    return true;
+  }
+</script>
+
+//   ████
+//  ██  ██
+//  ██  ██
+//  ██  ██
+//   █████
+//      ██
+//     ██
+//   ███
+
+<ul id="myList">
+  <li>Элемент 1</li>
+  <li>Элемент 2</li>
+</ul>
+
+<button onclick="addItem()">Добавить элемент</button>
+
+<script>
+  function addItem() {
+    const list = document.getElementById("myList");
+    const newItem = document.createElement("li");
+    newItem.textContent = "Новый элемент";
+    list.appendChild(newItem);
+  }
+</script>
+
+//    ██     ████
+//   ███    ██  ██
+//  ████    ██  ██
+//    ██    ██  ██
+//    ██    ██  ██
+//    ██    ██  ██
+//    ██    ██  ██
+//    ██     ████
+//    ██
+//  ██████
+<button onclick="changeBackground()">Изменить фон</button>
+
+<script>
+  function changeBackground() {
+    const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+    document.body.style.backgroundColor = randomColor;
+  }
+</script>
+
+//    ██     ██
+//   ███    ███
+//  ████   ████
+//    ██     ██
+//    ██     ██
+//    ██     ██
+//    ██     ██
+//    ██     ██
+//    ██     ██
+//  ██████ ██████
+
+<button onclick="countClicks()">Кликни меня</button>
+<p>Количество кликов: <span id="clickCount">0</span></p>
+
+<script>
+  let counter = 0;
+
+  function countClicks() {
+    counter++;
+    document.getElementById("clickCount").innerText = counter;
+  }
+</script>
+
+//    ██    █████
+//   ███        ██
+//  ████        ██
+//    ██      ███
+//    ██        ██
+//    ██        ██
+//    ██        ██
+//    ██     █████
+//    ██
+//  ██████
+<p>Осталось секунд: <span id="timer">10</span></p>
+
+<script>
+  let timeLeft = 10;
+  const timerElement = document.getElementById("timer");
+
+  const countdown = setInterval(function() {
+    timeLeft--;
+    timerElement.innerText = timeLeft;
+
+    if (timeLeft <= 0) {
+      clearInterval(countdown);
+      timerElement.innerText = "Время вышло!";
+    }
+  }, 1000);
+</script>
+//    ██      ██
+//   ███     ███
+//  ████    █ ██
+//    ██   ██ ██
+//    ██  ██████
+//    ██      ██
+//    ██      ██
+//    ██      ██
+//    ██
+//  ██████
+<input type="text" id="searchInput" placeholder="Поиск..." oninput="filterList()">
+
+<ul id="itemList">
+  <li>Яблоко</li>
+  <li>Апельсин</li>
+  <li>Банан</li>
+  <li>Груша</li>
+  <li>Ананас</li>
+</ul>
+
+<script>
+  function filterList() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const items = document.querySelectorAll("#itemList li");
+
+    items.forEach(function(item) {
+      const text = item.textContent.toLowerCase();
+      if (text.includes(input)) {
+        item.style.display = "list-item";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  }
+</script>
+//    ██    ██████
+//   ███    ██
+//  ████    ██
+//    ██    █████
+//    ██        ██
+//    ██        ██
+//    ██        ██
+//    ██     █████
+//    ██
+//  ██████
+<input type="text" id="inputField" placeholder="Введите текст">
+<button onclick="saveData()">Сохранить</button>
+<p>Сохранённый текст: <span id="savedText"></span></p>
+
+<script>
+  function saveData() {
+    const value = document.getElementById("inputField").value;
+    localStorage.setItem("myData", value);
+    displayData();
+  }
+
+  function displayData() {
+    const saved = localStorage.getItem("myData");
+    if (saved) {
+      document.getElementById("savedText").innerText = saved;
+    }
+  }
+
+  window.onload = displayData;
+</script>
+
+
+</body>
+</html>
