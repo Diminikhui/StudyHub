@@ -1,1 +1,0 @@
-'hobby' in person
