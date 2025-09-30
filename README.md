@@ -20,7 +20,9 @@
   - `projects/C#/` — проекты по C#.
   - `projects/JavaScript/` — проекты по JavaScript.
   - `projects/Python/` — проекты по Python.
-  - `projects/DataBase/` — проекты по Основы анализа и проектирования баз данных и СУБД (PostgreSQL, MySQL).
+  - `assignments/Technologies_AI/` — задания по Технологиям искусственного интеллекта.
+  - `assignments/Java/` — задания по Java.
+  
   
 - `assignments/` **— мелкие задания.**
   - `assignments/XML/` — задания по XML.
@@ -28,7 +30,8 @@
   - `assignments/C#/` — задания по C#.
   - `assignments/JavaScript/` — задания по JavaScript.
   - `assignments/Python/` — задания по Python.
-  - `assignments/DataBase/` — задания по Основы анализа и проектирования баз данных и СУБД (PostgreSQL, MySQL).
+  - `assignments/Technologies_AI/` — задания по Технологиям искусственного интеллекта.
+  - `assignments/Java/` — задания по Java.
 
 ## Как пользоваться
 
