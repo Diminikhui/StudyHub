@@ -10,5 +10,5 @@ object Users : LongIdTable("users") {
 object Events : LongIdTable("events") {
     val title = varchar("title", 200)
     val description = varchar("description", 2000).nullable()
-    val ownerId = reference("owner_id", Users) // one-to-many
+    val ownerId = reference("owner_id", Users)
 }

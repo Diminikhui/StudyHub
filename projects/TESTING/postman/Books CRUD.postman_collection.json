@@ -1,0 +1,330 @@
+{
+  "info": {
+    "_postman_id": "7f647068-1efe-4edb-a6d9-f0ae988df6c7",
+    "name": "Books CRUD",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52468284",
+    "_collection_link": "https://go.postman.co/collection/52468284-7f647068-1efe-4edb-a6d9-f0ae988df6c7?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Create book",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "function randomTitleRu() {",
+              "  const adjectives = [\"Тихий\", \"Скрытый\", \"Тёмный\", \"Яркий\", \"Потерянный\", \"Золотой\", \"Атомный\", \"Неоновый\"];",
+              "  const nouns = [\"Город\", \"Лес\", \"Океан\", \"Алгоритм\", \"Империя\", \"Сигнал\", \"Библиотека\", \"Протокол\"];",
+              "  const ts = Date.now().toString(36);",
+              "  const rnd = Math.random().toString(36).slice(2, 7);",
+              "  return `${adjectives[Math.floor(Math.random()*adjectives.length)]} ${nouns[Math.floor(Math.random()*nouns.length)]} ${ts}-${rnd}`;",
+              "}",
+              "",
+              "pm.collectionVariables.set(\"bookTitle\", randomTitleRu());"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Код 201\", () => {",
+              "  pm.response.to.have.status(201);",
+              "});",
+              "",
+              "pm.test(\"Время /лимита\", () => {",
+              "  const limit = Number(pm.collectionVariables.get(\"maxResponseTimeMs\") || 1000);",
+              "  pm.expect(pm.response.responseTime).to.be.below(limit);",
+              "});",
+              "",
+              "pm.test(\"ID есть, title совпал\", () => {",
+              "  const json = pm.response.json();",
+              "  pm.expect(json.id).to.exist;",
+              "  pm.expect(json.title).to.eql(pm.collectionVariables.get(\"bookTitle\"));",
+              "  pm.collectionVariables.set(\"bookId\", String(json.id));",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"{{bookTitle}}\",\n  \"author\": \"Postman\",\n  \"year\": 2026\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/users/{{userId}}/books",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "{{userId}}",
+            "books"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "List books",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Код 200\", () => {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Время / лимита\", () => {",
+              "  const limit = Number(pm.collectionVariables.get(\"maxResponseTimeMs\") || 1000);",
+              "  pm.expect(pm.response.responseTime).to.be.below(limit);",
+              "});",
+              "",
+              "pm.test(\"Список + есть bookId\", () => {",
+              "  const list = pm.response.json();",
+              "  const id = pm.collectionVariables.get(\"bookId\");",
+              "  pm.expect(list).to.be.an(\"array\");",
+              "  pm.expect(list.some(b => String(b.id) === String(id))).to.be.true;",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/users/{{userId}}/books",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "{{userId}}",
+            "books"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get book",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Code 200\", () => pm.response.to.have.status(200));",
+              "",
+              "pm.test(\"Response time < limit\", () => {",
+              "  const limit = Number(pm.collectionVariables.get(\"maxResponseTimeMs\") || 1000);",
+              "  pm.expect(pm.response.responseTime).to.be.below(limit);",
+              "});",
+              "",
+              "pm.test(\"ID matches\", () => {",
+              "  const json = pm.response.json();",
+              "  pm.expect(String(json.id)).to.eql(String(pm.collectionVariables.get(\"bookId\")));",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/users/{{userId}}/books/{{bookId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "{{userId}}",
+            "books",
+            "{{bookId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update book",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "const oldTitle = pm.collectionVariables.get(\"bookTitle\") || \"Untitled\";",
+              "pm.collectionVariables.set(\"bookTitleUpdated\", `${oldTitle} (updated ${Date.now()})`);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Code 200\", () => pm.response.to.have.status(200));",
+              "",
+              "pm.test(\"Response time < limit\", () => {",
+              "  const limit = Number(pm.collectionVariables.get(\"maxResponseTimeMs\") || 1000);",
+              "  pm.expect(pm.response.responseTime).to.be.below(limit);",
+              "});",
+              "",
+              "pm.test(\"Title updated\", () => {",
+              "  const json = pm.response.json();",
+              "  pm.expect(json.title).to.eql(pm.collectionVariables.get(\"bookTitleUpdated\"));",
+              "  pm.collectionVariables.set(\"bookTitle\", pm.collectionVariables.get(\"bookTitleUpdated\"));",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"{{bookTitleUpdated}}\",\n  \"author\": \"Postman Updated\",\n  \"year\": 2027\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/users/{{userId}}/books/{{bookId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "{{userId}}",
+            "books",
+            "{{bookId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete book",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Code 204\", () => pm.response.to.have.status(204));",
+              "",
+              "pm.test(\"Response time < limit\", () => {",
+              "  const limit = Number(pm.collectionVariables.get(\"maxResponseTimeMs\") || 1000);",
+              "  pm.expect(pm.response.responseTime).to.be.below(limit);",
+              "});",
+              "",
+              "pm.collectionVariables.unset(\"bookId\");"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/users/{{userId}}/books/{{bookId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "{{userId}}",
+            "books",
+            "{{bookId}}"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    },
+    {
+      "key": "bookTitle",
+      "value": ""
+    },
+    {
+      "key": "bookTitleUpdated",
+      "value": ""
+    },
+    {
+      "key": "maxResponseTimeMs",
+      "value": ""
+    },
+    {
+      "key": "bookId",
+      "value": ""
+    }
+  ]
+}
