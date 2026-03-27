@@ -1,0 +1,35 @@
+ktor:
+  application:
+    modules:
+      - com.diminik.api.ApplicationKt.module
+  deployment:
+    port: 8080
+
+app:
+  security:
+    issuer: "kotlinithub"
+    audience: "kotlinithub-users"
+    realm: "kotlinithub"
+    secret: "change-me-please"
+    tokenTtlMinutes: 120
+    bootstrapAdminEmail: "admin@gmail.com"
+    bootstrapAdminPassword: "admin123"
+    bootstrapAdminName: "Default Admin"
+  database:
+    jdbcUrl: "jdbc:postgresql://localhost:15432/kotlinithub"
+    username: "kotlinithub"
+    password: "kotlinithub"
+    maximumPoolSize: 10
+  redis:
+    host: "localhost"
+    port: 6379
+    password: ""
+    database: 0
+    productTtlSeconds: 300
+    orderTtlSeconds: 900
+  rabbitmq:
+    host: "localhost"
+    port: 5672
+    username: "guest"
+    password: "guest"
+    queueName: "order-events"

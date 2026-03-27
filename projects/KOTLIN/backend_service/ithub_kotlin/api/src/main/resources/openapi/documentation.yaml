@@ -1,0 +1,524 @@
+openapi: 3.0.3
+info:
+  title: Kotlinithub Store API
+  version: 1.0.0
+  description: API для регистрации, каталога товаров, заказов и админской статистики.
+servers:
+  - url: http://localhost:8080
+paths:
+  /auth/register:
+    post:
+      operationId: registerUser
+      summary: Регистрация пользователя
+      description: Создает нового пользователя и возвращает JWT токен.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+            example:
+              email: user@example.com
+              password: secret123
+              fullName: Ivan Petrov
+      responses:
+        '201':
+          description: Пользователь создан
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+              example:
+                token: eyJhbGciOiJIUzI1NiJ9.register.example
+                user:
+                  id: 2e8cbf03-b735-4c8b-a8b3-c49c7e6da111
+                  email: user@example.com
+                  fullName: Ivan Petrov
+                  role: USER
+                  createdAt: 2026-03-27T10:00:00Z
+  /auth/login:
+    post:
+      operationId: loginUser
+      summary: Авторизация пользователя
+      description: Проверяет email и пароль, затем возвращает JWT токен.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+            example:
+              email: user@example.com
+              password: secret123
+      responses:
+        '200':
+          description: Успешный вход
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+              example:
+                token: eyJhbGciOiJIUzI1NiJ9.login.example
+                user:
+                  id: 2e8cbf03-b735-4c8b-a8b3-c49c7e6da111
+                  email: user@example.com
+                  fullName: Ivan Petrov
+                  role: USER
+                  createdAt: 2026-03-27T10:00:00Z
+  /products:
+    get:
+      operationId: listProducts
+      summary: Получить список товаров
+      description: Возвращает публичный каталог товаров.
+      responses:
+        '200':
+          description: Список товаров
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+              example:
+                - id: 4dfcc1bd-2214-4ffd-9797-30ca8bf4d111
+                  name: Mechanical Keyboard
+                  description: Hot swap keyboard
+                  price: 129.99
+                  stock: 15
+                  createdAt: 2026-03-27T10:05:00Z
+                  updatedAt: 2026-03-27T10:05:00Z
+    post:
+      operationId: createProduct
+      summary: Создать товар
+      description: Создает новый товар. Доступно только администратору.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductRequest'
+            example:
+              name: Mechanical Keyboard
+              description: Hot swap keyboard
+              price: 129.99
+              stock: 15
+      responses:
+        '201':
+          description: Товар создан
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+              example:
+                id: 4dfcc1bd-2214-4ffd-9797-30ca8bf4d111
+                name: Mechanical Keyboard
+                description: Hot swap keyboard
+                price: 129.99
+                stock: 15
+                createdAt: 2026-03-27T10:05:00Z
+                updatedAt: 2026-03-27T10:05:00Z
+  /products/{id}:
+    get:
+      operationId: getProductById
+      summary: Получить товар по id
+      description: Возвращает одну карточку товара.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+            format: uuid
+          example: 4dfcc1bd-2214-4ffd-9797-30ca8bf4d111
+      responses:
+        '200':
+          description: Товар найден
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+              example:
+                id: 4dfcc1bd-2214-4ffd-9797-30ca8bf4d111
+                name: Mechanical Keyboard
+                description: Hot swap keyboard
+                price: 129.99
+                stock: 15
+                createdAt: 2026-03-27T10:05:00Z
+                updatedAt: 2026-03-27T10:05:00Z
+    put:
+      operationId: updateProduct
+      summary: Обновить товар
+      description: Полностью обновляет товар. Доступно только администратору.
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+            format: uuid
+          example: 4dfcc1bd-2214-4ffd-9797-30ca8bf4d111
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductRequest'
+            example:
+              name: Mechanical Keyboard Pro
+              description: Aluminum case
+              price: 149.99
+              stock: 12
+      responses:
+        '200':
+          description: Товар обновлен
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+              example:
+                id: 4dfcc1bd-2214-4ffd-9797-30ca8bf4d111
+                name: Mechanical Keyboard Pro
+                description: Aluminum case
+                price: 149.99
+                stock: 12
+                createdAt: 2026-03-27T10:05:00Z
+                updatedAt: 2026-03-27T10:20:00Z
+    delete:
+      operationId: deleteProduct
+      summary: Удалить товар
+      description: Удаляет товар. Доступно только администратору.
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+            format: uuid
+          example: 4dfcc1bd-2214-4ffd-9797-30ca8bf4d111
+      responses:
+        '204':
+          description: Товар удален
+  /orders:
+    get:
+      operationId: getOrdersHistory
+      summary: История заказов пользователя
+      description: Возвращает заказы текущего пользователя.
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: История заказов
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Order'
+              example:
+                - id: 8d6c7a47-0471-40df-a421-4ced1f1a3111
+                  userId: 2e8cbf03-b735-4c8b-a8b3-c49c7e6da111
+                  status: CREATED
+                  total: 259.98
+                  items:
+                    - productId: 4dfcc1bd-2214-4ffd-9797-30ca8bf4d111
+                      productName: Mechanical Keyboard
+                      price: 129.99
+                      quantity: 2
+                  createdAt: 2026-03-27T10:15:00Z
+                  updatedAt: 2026-03-27T10:15:00Z
+    post:
+      operationId: createOrder
+      summary: Создать заказ
+      description: Проверяет остатки товара, уменьшает stock, пишет audit log и отправляет событие в очередь.
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateOrderRequest'
+            example:
+              items:
+                - productId: 00000000-0000-0000-0000-000000000001
+                  quantity: 2
+      responses:
+        '201':
+          description: Заказ создан
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+              example:
+                id: 8d6c7a47-0471-40df-a421-4ced1f1a3111
+                userId: 2e8cbf03-b735-4c8b-a8b3-c49c7e6da111
+                status: CREATED
+                total: 259.98
+                items:
+                  - productId: 4dfcc1bd-2214-4ffd-9797-30ca8bf4d111
+                    productName: Mechanical Keyboard
+                    price: 129.99
+                    quantity: 2
+                createdAt: 2026-03-27T10:15:00Z
+                updatedAt: 2026-03-27T10:15:00Z
+  /orders/{id}:
+    delete:
+      operationId: cancelOrder
+      summary: Отменить заказ
+      description: Отменяет заказ текущего пользователя и возвращает stock товаров.
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+            format: uuid
+          example: 8d6c7a47-0471-40df-a421-4ced1f1a3111
+      responses:
+        '200':
+          description: Заказ отменен
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+              example:
+                id: 8d6c7a47-0471-40df-a421-4ced1f1a3111
+                userId: 2e8cbf03-b735-4c8b-a8b3-c49c7e6da111
+                status: CANCELLED
+                total: 259.98
+                items:
+                  - productId: 4dfcc1bd-2214-4ffd-9797-30ca8bf4d111
+                    productName: Mechanical Keyboard
+                    price: 129.99
+                    quantity: 2
+                createdAt: 2026-03-27T10:15:00Z
+                updatedAt: 2026-03-27T10:25:00Z
+  /stats/orders:
+    get:
+      operationId: getOrdersStats
+      summary: Получить статистику по заказам
+      description: Закрытый админский API со сводной статистикой.
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Статистика
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderStats'
+              example:
+                totalOrders: 12
+                createdOrders: 9
+                cancelledOrders: 3
+                totalRevenue: 2599.90
+                uniqueCustomers: 5
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    RegisterRequest:
+      type: object
+      required: [email, password, fullName]
+      example:
+        email: user@example.com
+        password: secret123
+        fullName: Ivan Petrov
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+        fullName:
+          type: string
+    LoginRequest:
+      type: object
+      required: [email, password]
+      example:
+        email: user@example.com
+        password: secret123
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+    ProductRequest:
+      type: object
+      required: [name, price, stock]
+      example:
+        name: Mechanical Keyboard
+        description: Hot swap keyboard
+        price: 129.99
+        stock: 15
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+          nullable: true
+        price:
+          type: number
+          format: double
+        stock:
+          type: integer
+    CreateOrderRequest:
+      type: object
+      required: [items]
+      example:
+        items:
+          - productId: 4dfcc1bd-2214-4ffd-9797-30ca8bf4d111
+            quantity: 2
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderItemRequest'
+    OrderItemRequest:
+      type: object
+      required: [productId, quantity]
+      example:
+        productId: 4dfcc1bd-2214-4ffd-9797-30ca8bf4d111
+        quantity: 2
+      properties:
+        productId:
+          type: string
+          format: uuid
+        quantity:
+          type: integer
+    User:
+      type: object
+      example:
+        id: 2e8cbf03-b735-4c8b-a8b3-c49c7e6da111
+        email: user@example.com
+        fullName: Ivan Petrov
+        role: USER
+        createdAt: 2026-03-27T10:00:00Z
+      properties:
+        id:
+          type: string
+        email:
+          type: string
+        fullName:
+          type: string
+        role:
+          type: string
+        createdAt:
+          type: string
+    AuthResponse:
+      type: object
+      example:
+        token: eyJhbGciOiJIUzI1NiJ9.example
+        user:
+          id: 2e8cbf03-b735-4c8b-a8b3-c49c7e6da111
+          email: user@example.com
+          fullName: Ivan Petrov
+          role: USER
+          createdAt: 2026-03-27T10:00:00Z
+      properties:
+        token:
+          type: string
+        user:
+          $ref: '#/components/schemas/User'
+    Product:
+      type: object
+      example:
+        id: 4dfcc1bd-2214-4ffd-9797-30ca8bf4d111
+        name: Mechanical Keyboard
+        description: Hot swap keyboard
+        price: 129.99
+        stock: 15
+        createdAt: 2026-03-27T10:05:00Z
+        updatedAt: 2026-03-27T10:05:00Z
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+          nullable: true
+        price:
+          type: number
+        stock:
+          type: integer
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+    OrderItem:
+      type: object
+      example:
+        productId: 4dfcc1bd-2214-4ffd-9797-30ca8bf4d111
+        productName: Mechanical Keyboard
+        price: 129.99
+        quantity: 2
+      properties:
+        productId:
+          type: string
+        productName:
+          type: string
+        price:
+          type: number
+        quantity:
+          type: integer
+    Order:
+      type: object
+      example:
+        id: 8d6c7a47-0471-40df-a421-4ced1f1a3111
+        userId: 2e8cbf03-b735-4c8b-a8b3-c49c7e6da111
+        status: CREATED
+        total: 259.98
+        items:
+          - productId: 4dfcc1bd-2214-4ffd-9797-30ca8bf4d111
+            productName: Mechanical Keyboard
+            price: 129.99
+            quantity: 2
+        createdAt: 2026-03-27T10:15:00Z
+        updatedAt: 2026-03-27T10:15:00Z
+      properties:
+        id:
+          type: string
+        userId:
+          type: string
+        status:
+          type: string
+        total:
+          type: number
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderItem'
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+    OrderStats:
+      type: object
+      example:
+        totalOrders: 12
+        createdOrders: 9
+        cancelledOrders: 3
+        totalRevenue: 2599.90
+        uniqueCustomers: 5
+      properties:
+        totalOrders:
+          type: integer
+        createdOrders:
+          type: integer
+        cancelledOrders:
+          type: integer
+        totalRevenue:
+          type: number
+        uniqueCustomers:
+          type: integer
