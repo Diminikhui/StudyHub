@@ -1,0 +1,38 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-second_brain_clean}
+      POSTGRES_USER: ${POSTGRES_USER:-second_brain}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-second_brain}
+    ports:
+      - "${POSTGRES_PORT:-15432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-second_brain} -d ${POSTGRES_DB:-second_brain_clean}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  minio:
+    image: minio/minio:latest
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ACCESS_KEY:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_SECRET_KEY:-minioadmin}
+    ports:
+      - "${MINIO_API_PORT:-9000}:9000"
+      - "${MINIO_CONSOLE_PORT:-9001}:9001"
+    volumes:
+      - minio_data:/data
+
+volumes:
+  postgres_data:
+    name: ${POSTGRES_VOLUME_NAME:-infra_postgres_data}
+    external: ${POSTGRES_VOLUME_EXTERNAL:-false}
+  minio_data:
+    name: ${MINIO_VOLUME_NAME:-infra_minio_data}
+    external: ${MINIO_VOLUME_EXTERNAL:-false}

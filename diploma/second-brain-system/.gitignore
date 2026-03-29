@@ -1,0 +1,5 @@
+# Local environment and generated artifacts
+.pdfenv/
+infra/.env
+backend/uploads/
+android/.idea/
