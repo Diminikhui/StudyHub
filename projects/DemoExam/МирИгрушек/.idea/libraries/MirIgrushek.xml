@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="MirIgrushek">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/build/MirIgrushek.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/postgresql-42.7.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
