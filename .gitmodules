@@ -1,0 +1,3 @@
+[submodule "assignments/Git/SemVer"]
+	path = assignments/Git/SemVer
+	url = https://github.com/Diminikhui/SemVer.git
